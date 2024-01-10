@@ -1,0 +1,108 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: white;
+}
+#title {
+  position: absolute;
+  text-align: left;
+  color: black;
+  font-family: 'Borel', cursive;
+  margin-left: 4%;
+  margin-top: 9px;
+
+}
+#searchbar{
+  padding: 13px 30px;
+  border-radius: 20px;
+  width:60%;
+  margin-left: 20%;
+  margin-top: 9px;
+  text-decoration: none;
+}
+.product-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.product {
+  text-align: center;
+  width: 200px;
+  margin-bottom: 30px;
+}
+.product img {
+  width: 100%;
+  height: auto;
+}
+.button {
+  transition: 0.3s;
+  font-family: 'Work Sans', sans-serif;
+  background: #E31445;
+  padding: 13px 30px;
+  border-radius: 30px;
+  color: white;
+  float: right;
+  margin-top: 9px;
+  text-decoration: none;
+}
+.button:hover {
+  transition: 0.3s;
+  background: black;
+  transform: scale(1.1);
+}
+
+#store-box {
+  background-color: transparent;
+  margin-top: 50px;
+  width: 300px;
+  height: 200px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+#store-image-box {
+  width: 290px;
+  height: 120px;
+  background-image: url(chickenNchips.jpg);
+  background-size: cover;
+  border-radius: 15px;
+}
+
+#store-box-title {
+  position: absolute;
+  font-family: sans-serif;
+  margin-top: 132px;
+  margin-left: 5px;
+  color: black;
+  font-size: 19px;
+  font-weight: 200;
+}
+
+#store-box-circle {
+  position: absolute;
+  height: 25px;
+  width: 26px;
+  border-radius: 30px;
+  background-color: #00000015; /*#rrggbbaa*/
+  margin-top: 130px;
+  margin-left: 260px;
+}
+
+#store-box-price {
+  position: absolute;
+  font-family: sans-serif;
+  color: black;
+  font-size: 11px;
+  font-weight: 100;
+  margin-left: 5px;
+  margin-top: 6px;
+}
+
+h1 {
+  position: absolute;
+  transform: translateX(-59px) ;
+}

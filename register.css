@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  padding-left: 10px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+h2,
+p {
+  font-family: 'Work Sans', sans-serif;
+}
+
+#title {
+  position: absolute;
+  text-align: left;
+  color: black;
+  font-family: 'Borel', cursive;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+
+#username {
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+
+#password {
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#newpassword {
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+
+.center {
+  margin: auto;
+  width: 250px;
+  padding: 300px;
+  border:black
+}
+
+#login:hover {
+  transition: 0.3s;
+  background: black;
+  transform: scale(1.1);
+}
+
+#login {
+  margin: 0;
+  top: 50px;
+  right: 10px;
+  transition: 0.3s;
+  font-family: 'Work Sans', sans-serif;
+  background: #E31445;
+  padding: 13px 120px;
+  border-radius: 30px;
+  color: white;
+  position: relative;
+}
+
+#fullname{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#age{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#address1{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#address2{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#address3{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#postcode{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}
+#tel{
+  font-family: 'Work Sans', sans-serif;
+  border-radius: 10px;
+  height: 30px;
+  width: 275px;
+}

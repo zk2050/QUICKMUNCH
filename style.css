@@ -1,0 +1,54 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  background-image: url("fast\ food.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title {
+  position: absolute;
+  text-align: left;
+  color: black;
+  font-family: 'Borel', cursive;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+
+.button {
+  transition: 0.3s;
+  font-family: 'Work Sans', sans-serif;
+  background: #E31445;
+  padding: 13px 30px;
+  border-radius: 30px;
+  color: white;
+  float: right;
+  margin-top: 9px;
+  text-decoration: none;
+}
+
+#login:hover {
+  transition: 0.3s;
+  background: black;
+  transform: scale(1.1);
+}
+
+#signup:hover {
+  transition: 0.3s;
+  background: black;
+  transform: scale(1.1);
+}
+
+.button-container {
+  width: 100%;
+  position: absolute;
+  top: 3%;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
