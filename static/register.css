@@ -68,19 +68,19 @@ p {
   position: relative;
 }
 
-#fullname{
+#name{
   font-family: 'Work Sans', sans-serif;
   border-radius: 10px;
   height: 30px;
   width: 275px;
 }
-#age{
+#dob{
   font-family: 'Work Sans', sans-serif;
   border-radius: 10px;
   height: 30px;
   width: 275px;
 }
-#address1{
+#address{
   font-family: 'Work Sans', sans-serif;
   border-radius: 10px;
   height: 30px;
@@ -104,7 +104,7 @@ p {
   height: 30px;
   width: 275px;
 }
-#tel{
+#phone_number{
   font-family: 'Work Sans', sans-serif;
   border-radius: 10px;
   height: 30px;
