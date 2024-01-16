@@ -9,36 +9,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <title>QUICKMUNCH</title>
-  <link href="register.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='register.css')}}">
+  <script src="{{url_for('static', filename='validation.js')}}"></script>
 </head>
 <body>
   <h1 id="title">Quickmunch</h1>
+<form method="post" action="{{ url_for('register_user')}}">
   <div class="center">
     <h2>Register a username and password</h2>
     <p>username</p>
-    <input type="text" id="username" name="user_input" placeholder="superleo117">
+    <input type="text" id="username" name="username" placeholder="superleo117">
     <p>password</p>
-    <input type="password" id="password" name="user_input">
+    <input type="password" id="password" name="password">
     <p>re-type password</p>
-    <input type="password" id="newpassword" name="user_input">
+    <input type="password" id="newpassword" name="re_password">
     <p>Enter your full name </p>
-    <input type="text" id="fullname" name ="user_input">
+    <input type="text" id="name" name ="name">
     <p>Enter your date of birth </p>
-    <input type="date" id="age" name ="user_input">
+    <input type="date" id="dob" name ="dob">
     <p>Enter address </p>
     <p>address line 1 </p>
-    <input type="text" id="address1" name="user_input">
+    <input type="text" id="address" name="address">
     <p>address line 2</p>
-    <input type="text" id="address2" name="user_input">
+    <input type="text" id="address2" name="address2">
     <p>address line 3</p>
-    <input type="text" id="address3" name="user_input">
+    <input type="text" id="address3" name="address3">
     <p>post code</p>
-    <input type="text" pattern="^(RG|ST|SL|W1).*" id="postcode" name="user_input">
+    <input type="text" id="postcode" name="postcode">
     <p>Enter your phone number</p>
-    <input type ="tel" id="tel" name="user_input">
-    <a id="login">REGISTER</a>
+    <input type ="tel" id="phone_number" name="phone_number">
+    <button id="login" type = "submit">REGISTER</button>
   </div>
-  
+</form>  
 </body>
 
 </html>

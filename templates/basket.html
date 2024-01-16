@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com" href="{{ url_for('static', filename='basket.css')}}">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet" href="{{ url_for('static', filename='basket.css')}}">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet" href="{{ url_for('static', filename='basket.css')}}">
+  <title>QUICKMUNCH</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='basket.css')}}">
+  <title>Restaurant</title>
+</head>
+
+<body>
+    <body>
+        <div class="basket">
+          <h1>Restaurant Basket</h1>
+          
+          <!-- Item 1 -->
+          <div class="basket-item">
+            <span class="item-name">Burger</span>
+            <span class="item-price">$5.99</span>
+            <button class="remove-item">Remove</button>
+          </div>
+      
+          <!-- Item 2 -->
+          <div class="basket-item">
+            <span class="item-name">Pizza</span>
+            <span class="item-price">$8.99</span>
+            <button class="remove-item">Remove</button>
+          </div>
+      
+          <!-- Total -->
+          <div class="total">
+            <span>Total:</span>
+            <span class="total-price">$14.98</span>
+          </div>
+      
+          <!-- Checkout Button -->
+          <button class="checkout-button">Checkout</button>
+        </div>
+</body>
+
+</html>
