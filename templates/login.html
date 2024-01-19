@@ -14,12 +14,13 @@
   <h1 id="title">Quickmunch</h1>
   <div class="center">
     <h2>Enter your username and password</h2>
-    <form method"post" action="{{url_for('login_user')}}">
-    <p>username</p>
-    <input type="text" id="username" name="user_input" placeholder="superleo117">
-    <p>password</p>
-    <input type="password" id="password" name="user_input">
-    <button id="login" type="submit">LOGIN</button>
+    {{ error }}
+    <form method="post" action="{{ url_for('login_user') }}">
+      <p>username</p>
+      <input type="text" id="username" name="username" placeholder="superleo117" required>
+      <p>password</p>
+      <input type="password" id="password" name="password" required>
+      <button id="login" type="submit">LOGIN</button>
     </form>
   </div>
   

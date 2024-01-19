@@ -1,8 +1,9 @@
 import sqlite3
-from flask import Flask, request, render_template, url_for
+from flask import Flask, request, render_template, url_for, redirect
 
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
+
 
 app.route('/basket')
 def basket():
@@ -20,23 +21,30 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register_user():
     if request.method == 'POST':
+        error = None
         username = request.form['username']
         password = request.form['password']
+        newpassword = request.form['newpassword']
         name = request.form['name']
         dob = request.form['dob']
         address = request.form['address']
         postcode = request.form['postcode']
         phone_number = request.form['phone_number']
-        conn = sqlite3.connect('account.sqlite')
-        cursor = conn.cursor()
-        cursor.execute("""INSERT INTO users (username, password, name, date, address,
-        postcode, phonenumber) VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (username, password, name, dob, address, postcode, phone_number))
-        conn.commit()
-        conn.close()
-        return render_template('login.html')
 
-    return render_template('register.html')
+        if password != newpassword:
+            error = "Passwords do not match"
+        else:
+            conn = sqlite3.connect('account.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("""INSERT INTO users (username, password, name, date, address,
+            postcode, phonenumber) VALUES (?, ?, ?, ?, ?, ?, ?)
+            """, (username, password, name, dob, address, postcode, phone_number))
+            conn.commit()
+            conn.close()
+            return render_template('login.html')
+
+    return render_template('register.html', error=error)
+
 @app.route('/show-register', methods=['GET'])
 def show_register():
     return render_template('register.html')
@@ -46,22 +54,26 @@ def show_register():
 def show_login():
     return render_template('login.html')
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login_user():
+    error = None
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        conn = sqlite3.connect('account.db')
+        
+        conn = sqlite3.connect('account.sqlite')
         cursor = conn.cursor()
+        
         cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
         user = cursor.fetchone()
         conn.close()
         if user:
             return redirect(url_for('frontpage'))
         else:
-            return 'Invalid username or password'
+            error =  'Invalid username or password'
 
-    return render_template('login.html')
+
+    return render_template('login.html', error=error)
 
 if __name__ == '__main__':
   app.run(host="127.0.0.1", port=8000, debug=True)

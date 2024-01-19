@@ -17,27 +17,28 @@
 <form method="post" action="{{ url_for('register_user')}}">
   <div class="center">
     <h2>Register a username and password</h2>
+    {{ error }}
     <p>username</p>
-    <input type="text" id="username" name="username" placeholder="superleo117">
+    <input type="text" id="username" name="username" placeholder="superleo117" required>
     <p>password</p>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" required>
     <p>re-type password</p>
-    <input type="password" id="newpassword" name="re_password">
+    <input type="password" id="newpassword" name="newpassword" required>
     <p>Enter your full name </p>
-    <input type="text" id="name" name ="name">
+    <input type="text" id="name" name ="name" required>
     <p>Enter your date of birth </p>
-    <input type="date" id="dob" name ="dob">
+    <input type="date" id="dob" name ="dob" required>
     <p>Enter address </p>
     <p>address line 1 </p>
-    <input type="text" id="address" name="address">
+    <input type="text" id="address" name="address" required>
     <p>address line 2</p>
-    <input type="text" id="address2" name="address2">
+    <input type="text" id="address2" name="address2" >
     <p>address line 3</p>
     <input type="text" id="address3" name="address3">
     <p>post code</p>
-    <input type="text" id="postcode" name="postcode">
+    <input type="text" id="postcode" name="postcode" required>
     <p>Enter your phone number</p>
-    <input type ="tel" id="phone_number" name="phone_number">
+    <input type ="tel" id="phone_number" name="phone_number" required>
     <button id="login" type = "submit">REGISTER</button>
   </div>
 </form>  
