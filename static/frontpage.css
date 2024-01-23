@@ -106,3 +106,10 @@ h1 {
   position: absolute;
   transform: translateX(-59px) ;
 }
+
+.gridcontainer{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}

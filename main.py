@@ -5,7 +5,7 @@ from flask import Flask, request, render_template, url_for, redirect
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 
-app.route('/basket')
+@app.route('/basket')
 def basket():
     return render_template('basket.html')
 
@@ -16,7 +16,6 @@ def frontpage():
 @app.route("/")
 def index():
     return render_template('index.html') 
-# this allows for the code to start  from the index page when it's displayed
 
 @app.route('/register', methods=['GET', 'POST'])
 def register_user():
@@ -74,6 +73,10 @@ def login_user():
 
 
     return render_template('login.html', error=error)
+
+@app.route('/menu', methods=['GET'])
+def show_menu():
+    return render_template('menu.html')
 
 if __name__ == '__main__':
   app.run(host="127.0.0.1", port=8000, debug=True)
