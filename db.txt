@@ -1,0 +1,3 @@
+run sqlite3
+.open restaurants.sqlite
+INSERT INTO restaurants (name, vegan, gluten, vegetarian, rating, cuisine, price) VALUES ("chicken N chips", "no", "yes", "no", "4.9", "American" ,"£");

@@ -15,9 +15,8 @@ body{
   grid-template-columns: auto auto auto;
   padding: 10px;
   font-family: Arial, Helvetica, sans-serif;
-  
-  
 }
+
 .grid-item{
   padding:20px;
   display:block;

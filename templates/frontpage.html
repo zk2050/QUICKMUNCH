@@ -9,30 +9,26 @@
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <title>QUICKMUNCH Store</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='frontpage.css')}}">
+        <script src="{{ url_for('static', filename='frontpage.js')}}"></script>
     </head>
     <body>
+        <button id="buttoon" onclick="AddStore()">MORE</button>
         <div class="navbar">
             <h1 id="title">Quickmunch</h1>
             <input type="search" id="searchbar" name="user input" placeholder="search for the restaurants here ">
             <a style="margin-right: 20px; text-decoration: none;" class="button" id="login" href="basket.html">basket 🛒 </a><br><br><br>
         </div>
-          <div class="grid-container">
-            <div id="store-box" >
-                <div id="store-image-box">
-                <h2 id="store-box-title">Chicken 'N Chips</h2>
+        <div id="container" class="grid-container">
 
+            <div id="store-place-holder"  class="grid-item" >
+                <div id="store-image-box"></div>
+                <h2 id="store-box-title">Chicken 'N Chips</h2>
+    
                 <div id="store-box-circle">
                     <h3 id="store-box-price">4.5</h3>
                 </div>
             </div>
-            <div id="store-box" >
-                <div id="store-image-box">
-                <h2 id="store-box-title">Chicken 'N Chips</h2>
 
-                <div id="store-box-circle">
-                    <h3 id="store-box-price">4.5</h3>
-                </div>
-            </div>
-          </div>
+        </div>
     </body>
 </html>
