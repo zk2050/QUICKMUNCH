@@ -1,4 +1,3 @@
-// script.js
 fetch('/restaurants')
   .then(response => response.json())
   .then(data => {
@@ -7,23 +6,22 @@ fetch('/restaurants')
       const restaurantElement = document.createElement('div');
       restaurantElement.className = 'grid-item';
 
-      const titleElement = document.createElement('h2');
-      titleElement.textContent = restaurant.title;
-      restaurantElement.appendChild(titleElement);
+      const nameElement = document.createElement('h2');
+      nameElement.textContent = restaurant.name;
+      restaurantElement.appendChild(nameElement);
 
-      const priceElement = document.createElement('h3');
-      priceElement.textContent = restaurant.price;
-      restaurantElement.appendChild(priceElement);
+      const ratingElement = document.createElement('h3');
+      ratingElement.textContent = restaurant.rating;
+      restaurantElement.appendChild(ratingElement);
 
-      const imageElement = document.createElement('img');
-      imageElement.src = restaurant.image_path;
-      // Append imageElement to the appropriate location in your HTML
-      // For example:
-      // document.getElementById('store-image-box').appendChild(imageElement);
+      const imageElement = document.createElement('div');
+      imageElement.id = 'store-image-box'; // Assign id to the image container div
+      imageElement.style.backgroundImage = `url('${restaurant.image_url}')`; // Set background image
+      restaurantElement.appendChild(imageElement);
 
       // Append restaurantElement to the appropriate location in your HTML
       // For example:
-      // document.getElementById('container').appendChild(restaurantElement);
+      document.getElementById('container').appendChild(restaurantElement);
     });
   })
   .catch(error => console.error('Error fetching restaurants:', error));
