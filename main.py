@@ -11,7 +11,14 @@ def basket():
 
 @app.route('/frontpage')
 def frontpage():
-    return render_template('frontpage.html')
+    connect = sqlite3.connect('restaurants.sqlite')
+    cursor = connect.cursor()
+    cursor.execute("SELECT name, rating, image_url FROM restaurants")
+    restaurants = cursor.fetchall()
+    connect.close()
+    print(restaurants)
+    return render_template('frontpage.html', restaurants=restaurants)
+
 
 @app.route("/")
 def index():
@@ -77,6 +84,7 @@ def login_user():
 @app.route('/menu', methods=['GET'])
 def show_menu():
     return render_template('menu.html')
+
 
 if __name__ == '__main__':
   app.run(host="127.0.0.1", port=7000, debug=True)

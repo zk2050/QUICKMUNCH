@@ -58,7 +58,6 @@ body {
 #store-image-box {
   width: 290px;
   height: 120px;
-  background-image: url(chickenNchips.jpg);
   background-size: cover;
   border-radius: 15px;
 }

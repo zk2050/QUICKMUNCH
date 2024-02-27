@@ -20,16 +20,19 @@
             <input type="search" id="searchbar" name="user input" placeholder="search for the restaurants here ">
             <a style="margin-right: 20px; text-decoration: none;" class="button" id="login" href="basket.html">basket 🛒 </a><br><br><br>
         </div>
+        
         <div id="container" class="grid-container">
-
+        {% for r in restaurants %}
             <div id="store-place-holder"  class="grid-item" >
-                <div id="store-image-box"></div>
-                <h2 id="store-box-title">Chicken 'N Chips</h2>
+                <img src='static/{{r[2]}}' id="store-image-box">
+                <h2 id="store-box-title">{{ r[0] }}</h2>
     
                 <div id="store-box-circle">
-                    <h3 id="store-box-price">4.5</h3>
+                    <h3 id="store-box-price">{{ r[1] }}</h3>
                 </div>
             </div>
+            {% endfor %}
         </div>
+        
     </body>
 </html>
