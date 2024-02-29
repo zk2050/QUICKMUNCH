@@ -81,9 +81,22 @@ def login_user():
 
     return render_template('login.html', error=error)
 
-@app.route('/menu', methods=['GET'])
-def show_menu():
-    return render_template('menu.html')
+@app.route('/menu/<restaurant>', methods=['GET'])
+def show_menu(restaurant: str):
+    conn = sqlite3.connect('restaurants.sqlite')
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT item_name, description, price, image_url FROM menu WHERE name=?", [restaurant])
+    data = cursor.fetchall()
+    conn.close()
+
+    if not data:
+        # This resturant does not exist
+        # TODO: Handle appropriately
+        return redirect(url_for('frontpage'))
+
+    # print(data)
+    return render_template('menu.html', restaurant_menu=data, restaurant=restaurant)
 
 
 if __name__ == '__main__':
