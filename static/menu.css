@@ -1,5 +1,5 @@
 body{
-  
+  background-color:orange;
 }
 .rating{
   font-size: 1rem;
@@ -20,7 +20,7 @@ body{
 .grid-item{
   padding:20px;
   display:block;
-  border : 2px solid red;
+  border : 1px solid black;
   background-color: lightgray;
 }
 .pic{
