@@ -22,14 +22,16 @@
         
         <div id="container" class="grid-container">
         {% for r in restaurants %}
-            <div id="store-place-holder"  class="grid-item" >
-                <img src='static/{{r[2]}}' id="store-image-box">
-                <h2 id="store-box-title">{{ r[0] }}</h2>
-    
-                <div id="store-box-circle">
-                    <h3 id="store-box-price">{{ r[1] }}</h3>
+            <a href="{{url_for('show_menu', restaurant=r[0])}}">
+                <div id="store-place-holder"  class="grid-item" >
+                    <img src='static/{{r[2]}}' id="store-image-box">
+                    <h2 id="store-box-title">{{ r[0] }}</h2>
+        
+                    <div id="store-box-circle">
+                        <h3 id="store-box-price">{{ r[1] }}</h3>
+                    </div>
                 </div>
-            </div>
+            </a>
         {% endfor %}
         </div>
         
