@@ -11,29 +11,106 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='menu.css')}}">
 </head>
 <body>
-  <h1 id="n">{{ restaurant }}
+  <h1 id="n">Chicken 'N Chips
   <p class="rating">4.7<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></p>
   </h1>
+  <button onclick="window.location.href = '/frontpage'">Go Back</button>
   <div class="grid-container">
-  {% block contet %}
-  {% for item in restaurant_menu %}
     <div class="grid-item">
       <div>
-        <img class="pic" src="{{url_for('static', filename=item[3])}}">
+        <img class="pic" src="https://static.vecteezy.com/system/resources/thumbnails/028/539/316/small/fried-chicken-wings-with-kethcup-generative-ai-photo.jpg">
       </div>
       <div>
-        <span class="line-break1">{{ item[0] }}</span>
+        <span class="line-break1">5 wings and chips meal</span>
         <br>
-        <span class="line-break2">{{ item[1] }}</span>
+        <span class="line-break2">fried chicken wings with crispy chips</span>
         <br>
-        <span class="line-break3">£{{ item[2] }}</span>
+        <span class="line-break3">£2.99</span>
+      </div>
+      <div>
+        <button id="addToBasket" onclick="window.location.href = '/basket'">Add to Basket</button>
+      </div>
+    </div>
+    <div class="grid-item">
+        <div>
+          <img class="pic" src="https://hips.hearstapps.com/hmg-prod/images/delish-211105-popeyes-chicken-sandwich-001-ab-web-1637207425.jpg?crop=1.00xw:0.753xh;0,0.175xh&resize=1200:*">
+        </div>
+        <div>
+          <span class="line-break1">Fried chicken burger meal</span>
+          <br>
+          <span class="line-break2">fried chicken burger with crispy chips</span>
+          <br>
+          <span class="line-break3">£4.99</span>
+        </div>
+        <div>
+          <button id="addToBasket">Add to Basket</button>
+        </div>
+      
+    </div>
+    <div class="grid-item">
+      <div>
+      <img class="pic" src="https://thecozycook.com/wp-content/uploads/2020/02/Copycat-McDonalds-French-Fries-.jpg">
+    </div>
+    <div>
+      <span class="line-break1">Fries</span>
+      <br>
+      <span class="line-break2">a portion of crispy fries</span>
+      <br>
+      <span class="line-break3">£0.99</span>
+    </div>
+    <div>
+      <button id="addToBasket">Add to Basket</button>
+    </div>
+    </div>
+    <div class="grid-item">
+      <div>
+        <img class="pic" src="https://www.triple-a-cafe.co.uk/sites/default/files/styles/mt_large/public/showcases/Fried%20Chicken.jpg?itok=6n2FpwiY">
+      </div>
+      <div>
+        <span class="line-break1">4 chicken pieces meal</span>
+        <br>
+        <span class="line-break2"> 4 fried chicken pieces with crispy chips</span>
+        <br>
+        <span class="line-break3">£3.99</span>
       </div>
       <div>
         <button id="addToBasket">Add to Basket</button>
       </div>
-    </div>  
-  {% endfor %}
-  {% endblock %}
+    </div>
+    <div class="grid-item">
+      <div>
+        <img class="pic" src="https://www.dontgobaconmyheart.co.uk/wp-content/uploads/2019/12/crispy-chicken-wraps.jpg">
+      </div>
+      <div>
+        <span class="line-break1">fried chicken wrap meal</span>
+        <br>
+        <span class="line-break2"> fried chicken wrap with crispy chips</span>
+        <br>
+        <span class="line-break3">£3.99</span>
+      </div>
+      <div>
+        <button id="addToBasket">Add to Basket</button>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div>
+        <img class="pic" src="https://www.theseasonedmom.com/wp-content/uploads/2021/04/Chicken-Nuggets-2.jpg">
+      </div>
+      <div>
+        <span class="line-break1">fried chicken nugget meal</span>
+        <br>
+        <span class="line-break2"> chicken nuggets with crispy chips</span>
+        <br>
+        <span class="line-break3">£2.99</span>
+      </div>
+      <div>
+        <button id="addToBasket">Add to Basket</button>
+      </div>
+    </div>
+
+    
+    
+
   </div>
 </body>
 </html>

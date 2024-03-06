@@ -11,14 +11,7 @@ def basket():
 
 @app.route('/frontpage')
 def frontpage():
-    connect = sqlite3.connect('restaurants.sqlite')
-    cursor = connect.cursor()
-    cursor.execute("SELECT name, rating, image_url FROM restaurants")
-    restaurants = cursor.fetchall()
-    connect.close()
-    print(restaurants)
-    return render_template('frontpage.html', restaurants=restaurants)
-
+    return render_template('frontpage.html')
 
 @app.route("/")
 def index():
@@ -81,23 +74,9 @@ def login_user():
 
     return render_template('login.html', error=error)
 
-@app.route('/menu/<restaurant>', methods=['GET'])
-def show_menu(restaurant: str):
-    conn = sqlite3.connect('restaurants.sqlite')
-    cursor = conn.cursor()
-    
-    cursor.execute("SELECT item_name, description, price, image_url FROM menu WHERE name=?", [restaurant])
-    data = cursor.fetchall()
-    conn.close()
-
-    if not data:
-        # This resturant does not exist
-        # TODO: Handle appropriately
-        return redirect(url_for('frontpage'))
-
-    # print(data)
-    return render_template('menu.html', restaurant_menu=data, restaurant=restaurant)
-
+@app.route('/menu', methods=['GET'])
+def show_menu():
+    return render_template('menu.html')
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=4000, debug=True)
+  app.run(host="127.0.0.1", port=8000, debug=True)

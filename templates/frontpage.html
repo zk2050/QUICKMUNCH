@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-        <title>QUICKMUNCH Store</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='frontpage.css')}}">
-        <script src="{{ url_for('static', filename='frontpage.js')}}"></script>
-        <script src="{{url_for('static',filename='script.js')}}"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Borel&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>QUICKMUNCH Store</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='frontpage.css')}}"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1 id="title">Quickmunch</h1>
+      <input
+        type="search"
+        id="searchbar"
+        name="user input"
+        placeholder="search for the restaurants here "
+      />
+      <a
+        style="margin-right: 20px; text-decoration: none"
+        class="button"
+        id="login"
+        href="/login"
+        >Logout
+      </a>
+      <a
+        style="margin-right: 20px; text-decoration: none"
+        class="button"
+        id="login"
+        href="/basket"
+        >basket 🛒 </a
+      ><br /><br /><br />
+    </div>
+    <div class="grid-container">
+      <div class="store-box" onclick="window.location.href = '/menu'">
+        <div id="store-image-box">
+          <h2 id="store-box-title">Chicken 'N Chips</h2>
 
-    </head>
-    <body>
-        <div class="navbar">
-            <h1 id="title">Quickmunch</h1>
-            <input type="search" id="searchbar" name="user input" placeholder="search for the restaurants here ">
-            <a style="margin-right: 20px; text-decoration: none;" class="button" id="login" href="basket.html">basket 🛒 </a><br><br><br>
+          <div id="store-box-circle">
+            <h3 id="store-box-price">4.5</h3>
+          </div>
         </div>
-        
-        <div id="container" class="grid-container">
-        {% for r in restaurants %}
-            <a href="{{url_for('show_menu', restaurant=r[0])}}">
-                <div id="store-place-holder"  class="grid-item" >
-                    <img src='static/{{r[2]}}' id="store-image-box">
-                    <h2 id="store-box-title">{{ r[0] }}</h2>
-        
-                    <div id="store-box-circle">
-                        <h3 id="store-box-price">{{ r[1] }}</h3>
-                    </div>
-                </div>
-            </a>
-        {% endfor %}
+      </div>
+      <div class="store-box" onclick="window.location.href = '/menu'">
+        <div id="store-image-box">
+          <h2 id="store-box-title">Chicken 'N Chips</h2>
+
+          <div id="store-box-circle">
+            <h3 id="store-box-price">4.5</h3>
+          </div>
         </div>
-        
-    </body>
+      </div>
+      <div class="store-box" onclick="window.location.href = '/menu'">
+        <div id="store-image-box">
+          <h2 id="store-box-title">Chicken 'N Chips</h2>
+
+          <div id="store-box-circle">
+            <h3 id="store-box-price">4.5</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
