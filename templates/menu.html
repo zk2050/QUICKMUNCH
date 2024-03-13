@@ -29,7 +29,14 @@
         <span class="line-break3">£{{ item[2] }}</span>
       </div>
       <div>
-        <button id="addToBasket">Add to Basket</button>
+        <!-- <button id="addToBasket" href="{{url_for('add_to_basket')}}" methods="POST">Add to Basket</button> -->
+        <form action="{{url_for('add_to_basket')}}" method="post">
+          <input type="hidden" name="item_name" value="{{ item[0] }}">
+          <input type="hidden" name="item_price" value="{{ item[2] }}">
+          <input type="hidden" name="restaurant_name", value="{{restaurant}}">
+          <button type="submit">Add to Basket.....</button>
+        </form>
+
       </div>
     </div>  
   {% endfor %}

@@ -7,14 +7,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet" href="{{ url_for('static', filename='basket.css')}}">
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet" href="{{ url_for('static', filename='basket.css')}}">
-  <title>QUICKMUNCH</title>
+  <title>Checkout</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='basket.css')}}">
 </head>
 
 <body>
     <body>
       <div class="basket">
-        <h1>Restaurant Basket</h1>
+        <h1>Checkout</h1>
         {% block contet %}
         {% if not basket_cart_data %}
           <p>Your basket is empty.</p>
@@ -25,35 +25,27 @@
               <div class="basket-item">
                 <span class="item-name">{{item['item_name']}}</span>
                 <span class="item-price">{{item['item_price']}}</span>
-                <!-- <button class="remove-item">Remove</button> -->
-                <form action="{{ url_for('remove_from_basket') }}" method="post">
-                  <input type="hidden" name="item_index" value="{{ loop.index0 }}">
-                  <button type="submit" class="remove-item">Remove</button>
-              </form>
               </div>
           
               {% endfor %}
               
               <!-- Total -->
               <div class="total">
+                <span>Items Total:</span>
+                <span class="total-price">{{item_price}}</span>
+              </div>
+
+              <div class="total">
+                <span>Tip:</span>
+                <span class="total-price">{{tip}}</span>
+              </div>
+
+              <div class="total">
                 <span>Total:</span>
                 <span class="total-price">{{total_price}}</span>
               </div>
 
-                <div class="tip-options">
-                  <form action="{{ url_for('checkout_cal') }}" method="post">
-                    <label>
-                      <input type="radio" name="tip" value="not_now" checked> Not Now
-                    </label>
-                    <label>
-                      <input type="radio" name="tip" value="10%"> 10%
-                    </label>
-                    <label>
-                      <input type="radio" name="tip" value="15%"> 15%
-                    </label>
-                      <button class="checkout-button">Checkout</button>
-                  </form>
-                </div>
+            <button class="checkout-button">Pay Now</button>
           
               <!-- Checkout Button -->
             {% endif %}
