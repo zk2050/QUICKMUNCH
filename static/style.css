@@ -31,6 +31,10 @@ body {
   text-decoration: none;
 }
 
+#login{
+  margin-right: 20px;
+}
+
 #login:hover {
   transition: 0.3s;
   background: black;
