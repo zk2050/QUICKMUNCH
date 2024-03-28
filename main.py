@@ -36,7 +36,7 @@ def register_user():
         address = request.form['address']
         postcode = request.form['postcode']
         phone_number = request.form['phone_number']
-
+        
         if password != newpassword:
             error = "Passwords do not match"
         else:
